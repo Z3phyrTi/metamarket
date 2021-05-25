@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/styleProductos.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
 
     <link
      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
@@ -20,11 +22,18 @@
     <h1 class="titulo">Metamarked</h1>
 </header>
   <body>
+    <script src="./assets/js/jquery.js"></script>
+    <script src="./assets/js/scrip.js"></script>
+    <script src="./assets/js/carrito.js"></script>
+    <script src="./assets/js/index.js"></script>
 
 
-    <img id="carrito" src="imagenes/carrito.png">
     <img id="casa" src="imagenes/home.png">
-    <img id="login" src="imagenes/login.png">
+    <a  href="paginas/carrito.html"><img id="carrito" src="./imagenes/carrito.png"> </a>
+    <a  href="paginas/login.html"><img id="login1" src="./imagenes/login.png"> </a>
+
+
+    
 
     <main class="container-fluid">
         <input type="checkbox" id="checkLateral" />
@@ -33,27 +42,8 @@
                 <label for="checkLateral"></label>
             </nav>
         </header>
-        <div id="lateral">
-            <!-- menú laterla -->
-            menu de al lado
-
-            <a id=Supermercado href="#Supermercadot">
-        <button id="boton1" type="button" class="btn btn-primary">Supermercado
-        </a>
-        </button>
-        <a id=Electro href="#electro">
-        <button id="boton2" type="button" class="btn btn-primary"> Electro y Tecnologia
-        </a>
-        </button>
-        <a id=hogar href="#Hogar">
-        <button id="boton3" type="button" class="btn btn-primary">Hogar
-         </a>
-        </button>
-
-        <a id=Supermercado href="#Supermercadot"></a>
-        <a id=Electro href="#electro"></a>
-        <a id=hogar href="#Hogar"></a>
-
+        <div id="lateral"> menu de al lado</div>
+        </main>        
 
     <div id="Slide" class="container">
         <div class="row">
@@ -70,12 +60,12 @@
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                       </div>
-                      <div class="carousel-item">
+                      <div class="carousel-item active">
                         <img src="imagenes/limpieza.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                         </div>
                       </div>
-                      <div class="carousel-item">
+                      <div class="carousel-item active">
                         <img src="imagenes/Supermercado.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                         </div>
@@ -95,133 +85,103 @@
         </div>
     </div>
     
-    
-        <!-- tarjetas supermercado-->
-    
-        <h2 id="Supermercadot">Supermercado</h2>
-        
-        <div class="tarjeta">
-      <img src="imagenes/perro.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Comida de perro marca Thor 15 Kilos
-          $20.000 </p>
+    <div class="wrap">
+      <h1>Escoge un producto</h1>
+      <div class="store-wrapper">
+        <div class="category_list">
+          <a href="#" class="category_item" category="all">Todo</a>
+          <a href="#" class="category_item" category="Supermercado">Supermercado</a>
+          <a href="#" class="category_item" category="Electro">Electro y Tecnologia</a>
+          <a href="#" class="category_item" category="hogar">Hogar</a>
+        </div>
+        <section class="products-list">
+          <div class="product-item" category="Supermercado">
+            <img class="item-image" src="./imagenes/costillar.png" alt="" >
+            <a class="item-title" href="#">Carne de cerdo costillar</a>
+            <h4 class="item-price">$6.000 x KG</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Supermercado">
+            <img class="item-image" src="./imagenes/liso.png" alt="" >
+            <a class="item-title" href="#">Carne de vacuno Lomo liso</a>
+            <h4 class="item-price">$8.000 x KG</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Supermercado">
+            <img class="item-image" src="./imagenes/vetado.png" alt="" >
+            <a class="item-title" href="#">Carne de vacuno Lomo vetado</a>
+            <h4 class="item-price">$10.000 x KG</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Supermercado">
+            <img class="item-image" src="./imagenes/perro.png" alt="" >
+            <a class="item-title" href="#">Comida de perro marca Thor 15 Kilos</a>
+              <h4 class="item-price">$20.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Supermercado">
+            <img class="item-image" src="./imagenes/papu.png" alt="" >
+            <a class="item-title" href="#">Leche Papu</a>
+            <h4 class="item-price">$400 200ML</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Electro">
+            <img class="item-image" src="./imagenes/nintendo.png" alt="" >
+            <a class="item-title" href="#">Nintendo Switch</a>
+            <h4 class="item-price">$339.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Electro">
+            <img class="item-image" src="./imagenes/xbox.png" alt="" >
+            <a class="item-title" href="#">Xbox One</a>
+            <h4 class="item-price">$250.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Electro">
+            <img class="item-image" src="./imagenes/ps4.png" alt="" >
+            <a class="item-title" href="#">Ps4 slim 500gb</a>
+            <h4 class="item-price">$310.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="Electro">
+            <img class="item-image" src="./imagenes/tele.png" alt="" >
+            <a class="item-title" href="#">Smart TV 43"</a>
+            <h4 class="item-price">$270.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="hogar">
+            <img class="item-image" src="./imagenes/lavadora.png" alt="" >
+            <a class="item-title" href="#">Lavadora 19KG</a>
+            <h4 class="item-price">$400.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="hogar">
+            <img class="item-image" src="./imagenes/cloro.png" alt="" >
+            <a class="item-title" href="#">Clorox anti-splash</a>
+            <h4 class="item-price">$1.800</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="hogar">
+            <img class="item-image" src="./imagenes/lavaloza.png" alt="" >
+            <a class="item-title" href="#">lavaloza quix 750ml</a>
+            <h4 class="item-price">$1.000</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="hogar">
+            <img class="item-image" src="./imagenes/confort.png" alt="" >
+            <a class="item-title" href="#">Confort 22mt</a>
+            <h4 class="item-price">$990</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>
+          </div>
+          <div class="product-item" category="hogar">
+            <img class="item-image" src="./imagenes/nova.png" alt="" >
+            <a class="item-title" href="#">Nova Ultra</a>
+            <h4 class="item-price">$1.950</h4>
+            <button class="item-button btn btn-primary addToCart">AÑADIR AL CARRITO</button>  
+          </div>
+        </section>
       </div>
     </div>
-    
-    <div class="tarjeta2">
-      <img src="imagenes/costillar.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Carne de cerdo costillar $6.000 x KG </p>
-      </div>
-    </div>
-    <div class="tarjeta3">
-      <img src="imagenes/liso.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Carne de vacuno Lomo liso $8.000 x KG </p>
-      </div>
-    </div>
-    <div class="tarjeta4">
-      <img src="imagenes/vetado.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Carne de vacuno Lomo vetado $10.000 x KG </p>
-      </div>
-    </div>
-
-    <div class="tarjeta5">
-      <img src="imagenes/papu.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Leche Papu $400 200ML </p>
-      </div>
-    </div>
-
-
-    <!--Tarjetas electro-tecnologia-->
-    
-    <h2 id="electro">Electro y Tecnologia</h2>
-
-    <div class="tarjeta6">
-      <img src="imagenes/nintendo.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Nintendo Switch $339.000 </p>
-      </div>
-    </div>
-
-    <div class="tarjeta7">
-      <img src="imagenes/xbox.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Xbox One $250.000 </p>
-      </div>
-    </div>
-
-    <div class="tarjeta8">
-      <img src="imagenes/ps4.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Ps4 slim 500gb $310.000  </p>
-      </div>
-    </div>
-
-    <div class="tarjeta9">
-      <img src="imagenes/tele.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Smart TV 43" $270.000 </p>
-      </div>
-    </div>
-
-    <div class="tarjeta10">
-      <img src="imagenes/lavadora.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Lavadora 19KG $400.000</p>
-      </div>
-    </div>
-
-    <!--tarjetas hogar-->
-
-    <h2 id="Hogar">Hogar</h2>
-
-    <div class="tarjeta11">
-      <img src="imagenes/cloro.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Clorox anti-splash $1.800</p>
-      </div>
-    </div>
-
-    <div class="tarjeta12">
-      <img src="imagenes/lavaloza.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">lavaloza quix 750ml $1.000</p>
-      </div>
-    </div>
-
-    <div class="tarjeta13">
-      <img src="imagenes/confort.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Confort 22mt $990 </p>
-      </div>
-    </div>
-
-    <div class="tarjeta14">
-      <img src="imagenes/servilletas.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">servilletas 200Un $1.500</p>
-      </div>
-    </div>
-
-    <div class="tarjeta15">
-      <img src="imagenes/nova.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <p class="card-text">Nova Ultra $1.950</p>
-      </div>
-    </div>
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 
   </body>
 </html>
