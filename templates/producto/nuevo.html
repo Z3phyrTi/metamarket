@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevo producto</title>
+    <link rel="stylesheet"
+	 href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+	 integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+	 crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+	<header class="cabezera2">
+		<input type="checkbox" id="bar"> 
+        <label for="bar" class="icon-menu"><img class="icon-menu" href="{% static '/imagenes/rayitas.png' %}" class="tit">MetaMarked</a></label>
+		<div class=" cab_nav">
+			<img src="{% static '/imagenes/logo.png' %}" alt="logo" class="logo">
+			<h2 class="nom_pag">MetaMarked</h2>
+			<ul>
+				{% if user.is_authenticated %}
+                <li ><a href="http://127.0.0.1:8000">Inicio</a></li>
+                <li class="marca"><a href={% url 'listar_productos' %}>SuperMercado</a></li>
+                <li  ><a href={% url 'listar_categorias' %}>Agregar</a></li>
+                <li ><a href={% url 'salir' %}>Cerrar sesion</a></li>
+                {% else %}
+                <li ><a href="http://127.0.0.1:8000">Inicio</a></li>
+                <li class="marca"><a href={% url 'listar_productos' %}>SuperMercado</a></li>
+                <li><a href="iniciar-sesion">Entrar</a></li>
+                {% endif %}
+			</ul>
+		</div>
+	</header>
+
+	<div class="imagen_fondo">
+		<img src="{% static 'imagenes/fondo.jpeg'%}" alt="fondo">
+	</div>
+    <section  class="row">
+	<article
+		class="formulario_ing"
+	>
+		<section class="registro1" class="card-body">
+			<h4 class="card-title text-center">Nuevo registro</h4>
+			<form method="POST" enctype="multipart/form-data" >
+				{%csrf_token%} {%for campo in formulario %}
+				<div class="row">
+					<div class="form-group col-md-12">
+						<label for="{{campo.id_for_label}}"
+							>{{campo.label}}</label
+						>
+						{{campo}}
+						<small
+							id="{{campo.id_form_label}}Ayuda"
+							class="form-text text-muted"
+							>{{ campo.erros }}</small
+						>
+					</div>
+				</div>
+				{%endfor%}
+				<div class="form-group d-flex justify-content-between">
+					<input
+						type="submit"
+						class="btn btn-success"
+						value="Guardar"
+					/>
+					<a
+						href="{%url 'listar_productos'%}"
+						class="btn btn-outline-danger"
+						>Volver</a
+					>
+				</div>
+			</form>
+		</section>
+	</article>
+</section>
+	<footer class="foot_2">
+		<p class="foot_p">Pagina web protegida por MetaMarked &copy</p>
+	</footer>
+</body>
+</html>

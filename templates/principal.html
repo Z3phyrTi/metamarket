@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MetaMarked</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+    crossorigin="anonymous"
+/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+
+
+</head>
+<body>
+    <header class="cabezera2">
+    <input type="checkbox" id="bar"> 
+    <label for="bar" class="icon-menu"><img class="icon-menu" href="{% static '/imagenes/rayitas.png' %}" class="tit">MetaMarked</a></label>
+    <div class=" cab_nav">
+        <img src="{% static '/imagenes/logo.png' %}" alt="logo" class="logo">
+        <h2 class="nom_pag">MetaMarked</h2>
+        <ul>
+            {% if user.is_authenticated %}
+            <li class="marca" ><a href="http://127.0.0.1:8000">Inicio</a></li>
+            <li><a href={% url 'listar_productos' %}>SuperMercado</a></li>
+            <li ><a href={% url 'listar_categorias' %}>Agregar</a></li>
+            <li ><a href={% url 'salir' %}>Cerrar sesion</a></li>
+            {% else %}
+            <li class="marca"><a href="http://127.0.0.1:8000">Inicio</a></li>
+            <li><a href={% url 'listar_productos' %}>SuperMercado</a></li>
+            <li><a href="iniciar-sesion">Entrar</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    </header>
+    <img class="fondo-imagen" src="{% static 'imagenes/fondo.jpeg'%}" alt="fondo">
+    
+	<div class="formulario_ing2">
+        <h2 class="titulo_cont2">Donde estamos ubicados</h2>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d830.6640394242588!2d-70.68271617074048!3d-33.61422488194513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM2JzUxLjIiUyA3MMKwNDAnNTUuOCJX!5e0!3m2!1ses!2scl!4v1625811699468!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    
+    <div class="contenedor">
+
+        <h2 class="titulo_cont">Quienes somos</h2>
+        <p><span class="parrafo_cont">Somos un pequeño SuperMercado que tiene una amplia cantidad de productos pueden ser alimientos,tecnologia,utiles de aseo,etc. En la cual puede realizar su compra vía online con la opcion de retiro en nuestro local o despacho a domicilio.</span></p>
+    </div>
+
+
+
+    <footer class="foot">
+        <p class="foot_p">Pagina web protegida por MetaMarked &copy</p>
+    </footer>
+
+<script src="{% static 'js/ra.js' %}"></script>
+
+    
+</body>
+</html>
+
